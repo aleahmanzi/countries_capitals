@@ -1,0 +1,35 @@
+.hero_wrap { outline: 0px solid green; width: 700px; margin: 0 auto; height:100px; background-color: #847F7C; } 
+.hero_text { text-align: center; font-size: 50px; position: relative; top: 25px; color: #DDFFE6; }
+
+.info_wrap { outline: 0px solid black; width: 700px; min-height: 400px; margin: 0 auto; background-color: #FAFAFA; position: relative; bottom: 15px; }
+.info_data { outline: 0px solid red; width: 450px; margin: 0 auto; padding: 100px; }
+.info_text { outline: 0px solid green; color: #212121; padding-bottom: 25px; text-align: center; }
+.welcome { font-size: 35px; }
+
+.search_button { cursor: pointer; border: 1px solid #212121; width: 125px; text-align: center; font-size: 14px; display: inline-block; border-radius: 5px; color: #212121; position: relative; left: 165px;  }
+.search_button:hover { border: 1px solid #9E9E9E; color: #9E9E9E; } 
+
+.countries_wrap { background-color: #FAFAFA; width: 700px; margin: 0 auto; position: relative; bottom: 15px;}
+.table_style { outline: 1px solid #A9A9A9; width: 600px; text-align: center; position: relative; left: 50px; top: 25px; }
+.header_wrap {  background-color: #847F7C; color: #DDFFE6; }
+.home_button { cursor: pointer; border: 1px solid #212121; width: 75px; text-align: center; font-size: 14px; display: inline-block; border-radius: 5px; color: #212121; position: relative; left: 310px; margin-top: 50px; margin-bottom: 25px; display: inline-block; }
+.home_button:hover { border: 1px solid #9E9E9E; color: #9E9E9E; } 
+td:hover { color: #9E9E9E; cursor: pointer; }
+
+.single_wrap { outline: 0px solid green; width: 700px; margin: 0 auto; background-color: #FAFAFA; min-height: 700px; position: relative; bottom: 50px; }
+.data_wrap { outline: 0px solid blue; width: 500px; margin: 0 auto; position: relative; top: 75px; }
+.data_unit { position: relative; text-align: center; }
+.country_button { cursor: pointer; border: 1px solid #212121; width: 125px; text-align: center; font-size: 14px; display: inline-block; border-radius: 5px; color: #212121; position: relative; margin-top: 25px; left: 120px; }
+.country_button:hover { border: 1px solid #9E9E9E; color: #9E9E9E; } 
+.country_name { font-size: 40px; text-align: center; }
+.neighbor_list { display: inline-block; padding: 5px; }
+.neighbor:hover { color: #9E9E9E; cursor: pointer; }
+.neighbor_wrap { display: inline-block; position: relative; }
+.flag_wrap img { height: 125px; margin-bottom: 25px; }
+
+.openList-yes { display: block; }
+.openList-no { display: none; } 
+.openHome-yes { display: block; }
+.openHome-no { display: none; } 
+.openInfo-yes { display: block; }
+.openInfo-no { display: none; } 
