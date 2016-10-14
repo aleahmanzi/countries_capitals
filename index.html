@@ -3,82 +3,83 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Countries and Capitals</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
-     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.10/angular.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.10/angular.min.js"></script>
 
   <script type="text/javascript" src="app.js"></script>
   <link href="main.css" rel="stylesheet">
 </head>
 
 <body>
- <header class="hero_wrap">
-  <div class="hero_data">
-   <div class="hero_text">Countries & Capitals</div>
-  </div><!-- . hero_data - -->
- </header><!-- . hero_wrap - -->
+  <header class="hero_wrap">
+    <div class="hero_data">
+      <div class="hero_text">Countries & Capitals</div>
+    </div><!-- . hero_data - -->
+  </header><!-- . hero_wrap - -->
 
- <section class="info_wrap openHome-[!openHome!]">
- <div class="info_data">
-  <div class="info_text">
-    <span class="welcome"><strong>WELCOME!</strong></span><br/>If you're looking to learn about different countries, you've come to the right place.  Browse our list of countries by selecting the button below.  Then select your country of interest to find fun facts about it.  Enjoy!
-  </div><!--. info_text - -->
-  <div class="search_item">
-   <div class="search_button" ng-click="browseCountries()">Browse Countries</div>
-  </div><!-- . search_item - -->
- <div><!-- . info_data - -->
-</section><!-- . info_wrap - -->
+  <section class="info_wrap openHome-[!openHome!]">
+    <div class="info_data">
+      <div class="info_text">
+        <p>
+          <span class="welcome"><strong>WELCOME!</strong></span>
+          <br/>If you're looking to learn about different countries, you've come to the right place.  Browse our list of countries by selecting the button below.  Then select your country of interest to find fun facts about it.  Enjoy!
+        <p>
+      </div><!--. info_text - -->
+      <div class="search_item">
+        <div class="search_button" ng-click="browseCountries()">Browse Countries</div>
+      </div><!-- . search_item - -->
+    <div><!-- . info_data - -->
+  </section><!-- . info_wrap - -->
 
-<section class="countries_wrap openList-[!openList!]">
-  <table class="table_style">
-    <tr class="header_wrap">
-     <th>Name</th>
-     <th>Country Code</th>
-     <th>Capital</th>
-     <th></th>
-    </tr>
-    <tr class="stat_wrap" ng-repeat="item in countryList | orderBy: 'name'" ng-click="countryInfo(item.countryCode)">
-     <td>[! item.countryName !]</td>
-     <td>[! item.countryCode !]</td>
-     <td>[! item.capital !]</td>
-    </tr>
-  </table>
-  <div class="search_item">
-   <div class="home_button" ng-click="returnHome()">Home</div>
-  </div><!-- . search_item - -->
-</section><!-- . countries_wrap - -->
+  <section class="countries_wrap openList-[!openList!]">
+    <table class="table_style">
+      <tr class="header_wrap">
+        <th>Name</th>
+        <th>Country Code</th>
+        <th>Capital</th>
+        <th></th>
+      </tr><!-- . header_wrap - -->
+      <tr class="stat_wrap" ng-repeat="item in countryList | orderBy: 'name'" ng-click="countryInfo(item.countryCode)">
+        <td>[! item.countryName !]</td>
+        <td>[! item.countryCode !]</td>
+        <td>[! item.capital !]</td>
+      </tr><!-- . stat_wrap - -->
+    </table><!-- . table_style - -->
+    <div class="search_item">
+      <div class="home_button" ng-click="returnHome()">Home</div>
+    </div><!-- . search_item - -->
+  </section><!-- . countries_wrap - -->
 
-<section class="single_wrap openInfo-[!openInfo!]">
+  <section class="single_wrap openInfo-[!openInfo!]">
     <div class="data_wrap">
+      <div class="data_unit" ng-repeat="item in countryDetail">
 
-     <div class="data_unit" ng-repeat="item in countryDetail">
-      <p class="stats country_name"><strong>[! item.countryName !]</strong></p>
+        <p class="stats country_name"><strong>[! item.countryName !]</strong></p>
+        <div class="flag_wrap">
+          <img class="flag_pic" ng-src="http://www.geonames.org/flags/x/[! item.countryCode | lowercase !].gif" />
+        </div><!-- . flag_wrap - -->   
 
-     <div class="flag_wrap">
-      <img class="flag_pic" ng-src="http://www.geonames.org/flags/x/[! item.countryCode | lowercase !].gif" />
-     </div><!-- . flag_wrap - -->   
+        <p class="stats"><strong>Population of Country:</strong> [! item.population | number !]</p>
+        <p class="stats"><strong>Area:</strong> [! item.areaInSqKm | number !]</p>
+        <p class="stats"><strong>Capital:</strong> [! item.capital !]</p>
 
-      <p class="stats"><strong>Population of Country:</strong> [! item.population | number !]</p>
-      <p class="stats"><strong>Area:</strong> [! item.areaInSqKm | number !]</p>
-      <p class="stats"><strong>Capital:</strong> [! item.capital !]</p>
+        <div class="neighbor_wrap">
+          <div class="stats noNeighbor"><strong>Neighbors:</strong>  [! noNeighbor !]
+            <div class=" stats neighbor_list" ng-repeat="item in neighborInfo">
+              <p class=" stats neighbor" ng-click="countryInfo(item.countryCode)">[!item.countryName !]</p>
+            </div><!-- . neighbor_list - -->
+          </div><!-- . noNeighbor - -->
+        </div><!-- . neighbor_wrap - -->
+      </div><!-- . data_unit - -->
 
-    <div class="neighbor_wrap">
-      <div class="stats noNeighbor"><strong>Neighbors:</strong>  [! noNeighbor !]
-        <div class=" stats neighbor_list" ng-repeat="item in neighborInfo">
-          <p class=" stats neighbor" ng-click="countryInfo(item.countryCode)">[!item.countryName !]</p>
-        </div><!-- . neighbor_list - -->
-      </div><!-- . noNeighbor - -->
-    </div><!-- . neighbor_wrap - -->
-    </div><!-- . data_unit - -->
-
-     <div class="search_item">
-      <div class="country_button" ng-click="returnHome()">
+      <div class="search_item">
+        <div class="country_button" ng-click="returnHome()">
         Home
-      </div>
-      <div class="country_button" ng-click="browseCountries()">
+        </div>
+        <div class="country_button" ng-click="browseCountries()">
         Browse Countries
-      </div>
-     </div><!-- . search_item - -->
+        </div>
+      </div><!-- . search_item - -->
     </div><!-- .  data_wrap - -->
-</section><!-- . single_wrap - -->
+  </section><!-- . single_wrap - -->
 </body>
 </html>
