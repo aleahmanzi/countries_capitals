@@ -7,6 +7,7 @@
 
   <script type="text/javascript" src="app.js"></script>
   <link href="main.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto" rel="stylesheet">
 </head>
 
 <body>
@@ -17,12 +18,12 @@
   </header><!-- . hero_wrap - -->
 
   <section class="info_wrap openHome-[!openHome!]">
+    <img class="flag" src="flag.jpg" alt="flag_img">
     <div class="info_data">
       <div class="info_text">
-        <p>
-          <span class="welcome"><strong>WELCOME!</strong></span>
-          <br/>If you're looking to learn about different countries, you've come to the right place.  Browse our list of countries by selecting the button below.  Then select your country of interest to find fun facts about it.  Enjoy!
-        <p>
+        <p class="welcome">WELCOME!</p>
+        <p class="directions">If you're looking to learn about different countries, you've come to the right place.</p>
+        <p class="steps">1. Browse our list of countries by selecting the button below.<br/> 2. Then select your country of interest to find fun facts about it.<br/>3. Enjoy!</p>
       </div><!--. info_text - -->
       <div class="search_item">
         <div class="search_button" ng-click="browseCountries()">Browse Countries</div>
@@ -44,9 +45,11 @@
         <td>[! item.capital !]</td>
       </tr><!-- . stat_wrap - -->
     </table><!-- . table_style - -->
-    <div class="search_item">
+
+    <div class="goHome_button">
       <div class="home_button" ng-click="returnHome()">Home</div>
-    </div><!-- . search_item - -->
+    </div><!-- . goHome_button - -->
+
   </section><!-- . countries_wrap - -->
 
   <section class="single_wrap openInfo-[!openInfo!]">
@@ -72,10 +75,10 @@
       </div><!-- . data_unit - -->
 
       <div class="search_item">
-        <div class="country_button" ng-click="returnHome()">
+        <div id="home" class="country_button" ng-click="returnHome()">
         Home
         </div>
-        <div class="country_button" ng-click="browseCountries()">
+        <div id="browse" class="country_button" ng-click="browseCountries()">
         Browse Countries
         </div>
       </div><!-- . search_item - -->
